@@ -25,3 +25,17 @@ mkdir pages
 ```bash
 npm run dev
 ```
+
+## hello-world
+
+create `pages/index/index.js`
+
+```js
+const Index = () => (
+  <div>
+    <p>Hello Next.js</p>
+  </div>
+);
+
+export default Index;
+```
