@@ -28,7 +28,7 @@ npm run dev
 
 ## Hello world
 
-- pages/Index/index.js
+- pages/index/index.js
 
 ```js
 const Index = () => {
