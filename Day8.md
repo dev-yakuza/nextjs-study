@@ -1,35 +1,41 @@
-# dynamic linke
+# Analyze
 
-## page/index/index.tsx
+## install
+
+```bash
+npm install --save-dev @next/bundle-analyzer cross-env
+```
+
+## next.config.js
 
 ```js
-import Styled from 'styled-components';
-import Link from 'next/link';
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-import Label from '~/components/Label';
-
-const Cotainer = Styled.div`
-  background-color: red;
-`;
-
-const Index = () => {
-  const text = 'dynamic-text';
-
-  return (
-    <Cotainer>
-      <Label text="Hello Next.js" />
-      <Link href="/about">
-        <a>go to About page</a>
-      </Link>
-      <Link href="/title?text=abcdefg">
-        <a>go to Title page</a>
-      </Link>
-      <Link href={`/title?text=${text}`}>
-        <a>dynamic link</a>
-      </Link>
-    </Cotainer>
-  );
-};
-
-export default Index;
+module.exports = withBundleAnalyzer({});
 ```
+
+## script
+
+```bash
+"scripts": {
+  "dev": "next",
+  "build": "next build",
+  "start": "next start",
+  "analyze": "cross-env ANALYZE=true next build",
+  "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+  "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+},
+```
+
+## run
+
+```bash
+npm run analyze
+```
+
+## why?
+
+- lazy loading modules
+- lazy loading components

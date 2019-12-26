@@ -1,55 +1,47 @@
-# babel-plugin-root-import
+# routing system
 
-## install
+- Link
 
-```bash
-npm install babel-plugin-root-import --save-dev
+## page/about/index.tsx
+
+```js
+import Link from 'next/link';
+
+const About = () => {
+  return (
+    <div>
+      <p>This is the about page</p>
+      <Link href="/">
+        <a>go to index page</a>
+      </Link>
+    </div>
+  );
+};
+
+export default About;
+
 ```
 
-## .babelrc
+## page/index/index.tsx
 
-create `.babelrc` file
+```js
+import Styled from 'styled-components';
+import Link from 'next/link';
 
-```json
-{
-  "presets": ["next/babel"],
-  "plugins": [
-    [
-      "styled-components",
-      {
-        "ssr": true,
-        "displayName": true,
-        "preprocess": false
-      }
-    ],
-    [
-      "babel-plugin-root-import",
-      {
-        "rootPathPrefix": "~",
-        "rootPathSuffix": "src"
-      }
-    ]
-  ]
-}
-```
+import Label from '~/components/Label';
 
-## tsconfig.json
+const Cotainer = Styled.div`
+  background-color: red;
+`;
 
-```json
-{
-  "compilerOptions": {
-    ...
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["*"]
-    }
-  },
-  ...
-}
-```
+const Index = () => (
+  <Cotainer>
+    <Label text="Hello Next.js" />
+    <Link href="/about">
+      <a>go to About page</a>
+    </Link>
+  </Cotainer>
+);
 
-## start
-
-```bash
-npm run dev
+export default Index;
 ```

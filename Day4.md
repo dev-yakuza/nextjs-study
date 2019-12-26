@@ -1,10 +1,9 @@
-# styled-components
+# babel-plugin-root-import
 
 ## install
 
 ```bash
-npm install --save styled-components
-npm install --save-dev babel-plugin-styled-components
+npm install babel-plugin-root-import --save-dev
 ```
 
 ## .babelrc
@@ -13,9 +12,7 @@ create `.babelrc` file
 
 ```json
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": ["next/babel"],
   "plugins": [
     [
       "styled-components",
@@ -24,8 +21,30 @@ create `.babelrc` file
         "displayName": true,
         "preprocess": false
       }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathPrefix": "~",
+        "rootPathSuffix": "src"
+      }
     ]
   ]
+}
+```
+
+## tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["*"]
+    }
+  },
+  ...
 }
 ```
 

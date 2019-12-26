@@ -53,6 +53,7 @@ create `.gitignore` file
 
 ```
 node_modules
+.next
 ```
 
 ### package.json
@@ -62,7 +63,7 @@ node_modules
   "dev": "next",
   "build": "next build",
   "start": "next start"
-}
+},
 ```
 
 ### Run
