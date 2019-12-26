@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +21,13 @@
     "styled-components": "4.4.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "9.1.6",
     "@types/node": "13.1.0",
     "@types/react": "16.9.17",
     "@types/styled-components": "4.4.1",
     "babel-plugin-root-import": "6.4.1",
     "babel-plugin-styled-components": "1.10.6",
+    "cross-env": "6.0.3",
     "typescript": "3.7.4"
   }
 }

@@ -11754,40 +11754,67 @@ var Cotainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.wit
 })(["background-color:red;"]);
 
 var Index = function Index() {
+  var text = 'dynamic-text';
   return __jsx(Cotainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 14
     },
     __self: this
   }, __jsx(_components_Label__WEBPACK_IMPORTED_MODULE_3__["default"], {
     text: "Hello Next.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 15
     },
     __self: this
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 16
     },
     __self: this
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 17
     },
     __self: this
-  }, "go to About page")));
+  }, "go to About page")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/title?text=abcdefg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "go to Title page")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/title?text=".concat(text),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "dynamic link")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjeonghean_kim%2Fprivate%2Freact-study%2FExample%2Fhello-next%2Fpages%2Findex%2Findex.tsx ***!
   \********************************************************************************************************************************************************************/
@@ -11810,5 +11837,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
