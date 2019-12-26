@@ -4,7 +4,7 @@
 
 ```bash
 npm install --save styled-components
-npm install --save-dev babel-plugin-styled-components
+npm install --save-dev @types/styled-components babel-plugin-styled-components
 ```
 
 ## .babelrc
