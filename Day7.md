@@ -1,4 +1,6 @@
-# dynamic linke
+# routing parameters
+
+- useRouter
 
 ## page/index/index.tsx
 
@@ -12,24 +14,31 @@ const Cotainer = Styled.div`
   background-color: red;
 `;
 
-const Index = () => {
-  const text = 'dynamic-text';
-
-  return (
-    <Cotainer>
-      <Label text="Hello Next.js" />
-      <Link href="/about">
-        <a>go to About page</a>
-      </Link>
-      <Link href="/title?text=abcdefg">
-        <a>go to Title page</a>
-      </Link>
-      <Link href={`/title?text=${text}`}>
-        <a>dynamic link</a>
-      </Link>
-    </Cotainer>
-  );
-};
+const Index = () => (
+  <Cotainer>
+    <Label text="Hello Next.js" />
+    <Link href="/about">
+      <a>go to About page</a>
+    </Link>
+    <Link href="/title?text=abcdefg">
+      <a>go to Title page</a>
+    </Link>
+  </Cotainer>
+);
 
 export default Index;
+```
+
+## page/title/index.tsx
+
+```js
+import { useRouter } from 'next/router';
+
+const Title = () => {
+  const router = useRouter();
+  const { text } = router.query;
+  return <p>{text}</p>;
+};
+
+export default Title;
 ```

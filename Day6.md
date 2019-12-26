@@ -1,6 +1,26 @@
-# routing parameters
+# routing system
 
-- useRouter
+- Link
+
+## page/about/index.tsx
+
+```js
+import Link from 'next/link';
+
+const About = () => {
+  return (
+    <div>
+      <p>This is the about page</p>
+      <Link href="/">
+        <a>go to index page</a>
+      </Link>
+    </div>
+  );
+};
+
+export default About;
+
+```
 
 ## page/index/index.tsx
 
@@ -20,25 +40,8 @@ const Index = () => (
     <Link href="/about">
       <a>go to About page</a>
     </Link>
-    <Link href="/title?text=abcdefg">
-      <a>go to Title page</a>
-    </Link>
   </Cotainer>
 );
 
 export default Index;
-```
-
-## page/title/index.tsx
-
-```js
-import { useRouter } from 'next/router';
-
-const Title = () => {
-  const router = useRouter();
-  const { text } = router.query;
-  return <p>{text}</p>;
-};
-
-export default Title;
 ```

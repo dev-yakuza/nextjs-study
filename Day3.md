@@ -1,36 +1,24 @@
-# styled-components
+# typescript
 
 ## install
 
 ```bash
-npm install --save styled-components
-npm install --save-dev @types/styled-components babel-plugin-styled-components
+npm install --save-dev typescript @types/react @types/node
 ```
 
-## .babelrc
+## change file name
 
-create `.babelrc` file
-
-```json
-{
-  "presets": [
-    "next/babel"
-  ],
-  "plugins": [
-    [
-      "styled-components",
-      {
-        "ssr": true,
-        "displayName": true,
-        "preprocess": false
-      }
-    ]
-  ]
-}
-```
+> .js > .tsx
 
 ## start
 
 ```bash
 npm run dev
+```
+
+## tsconfig.json
+
+```json
+// "strict": false,
+"strict": true,
 ```

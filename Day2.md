@@ -1,24 +1,43 @@
-# typescript
+# Nextjs
 
-## install
+## Setup
 
 ```bash
-npm install --save-dev typescript @types/react @types/node
+mkdir hello-next
+cd hello-next
+npm init -y
+npm install --save react react-dom next
+mkdir pages
 ```
 
-## change file name
+## package.json
 
-> .js > .tsx
+```json
+"scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+},
+```
 
-## start
+## Start
 
 ```bash
 npm run dev
 ```
 
-## tsconfig.json
+## Hello world
 
-```json
-// "strict": false,
-"strict": true,
+- pages/Index/index.js
+
+```js
+const Index = () => {
+  return (
+    <div>
+      <p>Hello world</p>
+    </div>
+  );
+};
+
+export default Index;
 ```
