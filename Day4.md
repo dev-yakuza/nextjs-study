@@ -26,7 +26,7 @@ create `.babelrc` file
       "babel-plugin-root-import",
       {
         "rootPathPrefix": "~",
-        "rootPathSuffix": "src"
+        "rootPathSuffix": "./"
       }
     ]
   ]
