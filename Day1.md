@@ -51,7 +51,11 @@ mkdir pages
 
 create `.gitignore` file
 
-```
+```bash
+touch .gitignore
+code .gitignore
+
+## add
 node_modules
 .next
 ```
