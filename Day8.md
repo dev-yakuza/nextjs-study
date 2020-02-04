@@ -1,4 +1,4 @@
-# dynamic linke
+# dynamic link
 
 ## page/index/index.tsx
 

@@ -34,3 +34,26 @@ create `.babelrc` file
 ```bash
 npm run dev
 ```
+
+## Hello world
+
+- pages/index/index.tsx
+
+```js
+import Styled from 'styled-components';
+
+const Cotainer = Styled.div`
+  background-color: red;
+`;
+
+interface Props {}
+const Index = ({}:Props) => {
+  return (
+    <Container>
+      <p>Hello world</p>
+    </Container>
+  );
+};
+
+export default Index;
+```
