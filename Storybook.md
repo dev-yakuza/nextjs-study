@@ -188,16 +188,18 @@ module.exports = {
 import Styled from 'styled-components';
 
 const Container = Styled.div`
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: 1px solid gray;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  cursor: pointer;
 `;
 
 interface Props {
   text: string;
+  onClick?: () => void;
 }
-const Button = ({ text }: Props) => {
-  return <Container>{text}</Container>;
+const Button = ({ text, onClick }: Props) => {
+  return <Container onClick={onClick}>{text}</Container>;
 };
 
 export default Button;
@@ -208,15 +210,48 @@ export default Button;
 ```js
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import Button from '~/components/Button';
 
-storiesOf('Button', module).add('with text', () => {
-  return <Button text="Click Me" />;
-});
+import Button from './index';
+
+storiesOf('Button', module)
+  .add('Default', () => {
+    return <Button text="Click Me" />;
+  })
+  .add('onClick', () => {
+    return <Button text="Click Me" onClick={() => alert('clicked!')} />;
+  });
+
 ```
 
 - start storybook
 
 ```bash
 npm run storybook
+```
+
+## addon center
+
+- install
+
+```bash
+npm install --save-dev @storybook/addon-centered
+```
+
+- create story: components/Button/index.story.tsx
+
+```js
+import * as React from 'react';
+import { storiesOf } from '@storybook/react';
+import centered from '@storybook/addon-centered/react';
+
+import Button from './index';
+
+storiesOf('Button', module)
+  .addDecorator(centered)
+  .add('Default', () => {
+    return <Button text="Click Me" />;
+  })
+  .add('onClick', () => {
+    return <Button text="Click Me" onClick={() => alert('clicked!')} />;
+  });
 ```
