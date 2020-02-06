@@ -255,3 +255,93 @@ storiesOf('Button', module)
     return <Button text="Click Me" onClick={() => alert('clicked!')} />;
   });
 ```
+
+## @storybook/addon-actions
+
+[https://www.npmjs.com/package/@storybook/addon-actions](https://www.npmjs.com/package/@storybook/addon-actions)
+
+- install
+
+```bash
+npm install --save-dev @storybook/addon-actions
+```
+
+- .storybook/main.js
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.tsx'],
+  addons: ['@storybook/addon-actions/register'],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
+  },
+};
+```
+
+## @storybook/addon-viewport
+
+[https://github.com/storybookjs/storybook/tree/master/addons/viewport](https://github.com/storybookjs/storybook/tree/master/addons/viewport)
+
+- install
+
+```bash
+npm install --save-dev @storybook/addon-viewport
+```
+
+- .storybook/main.js
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.tsx'],
+  addons: ['@storybook/addon-actions/register', '@storybook/addon-viewport/register'],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
+  },
+};
+```
+
+## @storybook/addon-knobs
+
+[https://github.com/storybookjs/storybook/tree/master/addons/knobs](https://github.com/storybookjs/storybook/tree/master/addons/knobs)
+
+- install
+
+```bash
+npm install --save-dev @storybook/addon-knobs
+```
+
+- .storybook/main.js
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.tsx'],
+  addons: ['@storybook/addon-actions/register', '@storybook/addon-viewport/register', '@storybook/addon-knobs/register'],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
+  },
+};
+```
