@@ -345,3 +345,38 @@ module.exports = {
   },
 };
 ```
+
+## @storybook/addon-storysource
+
+[https://github.com/storybookjs/storybook/tree/master/addons/storysource](https://github.com/storybookjs/storybook/tree/master/addons/storysource)
+
+- install
+
+```bash
+npm install --save-dev @storybook/addon-storysource
+```
+
+- .storybook/main.js
+
+```js
+module.exports = {
+  stories: ['../**/*.stories.tsx'],
+  addons: [
+    '@storybook/addon-viewport/register',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-actions/register',
+    '@storybook/addon-storysource',
+  ],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      loader: require.resolve('babel-loader'),
+      options: {
+        presets: [['react-app', { flow: false, typescript: true }]],
+      },
+    });
+    config.resolve.extensions.push('.ts', '.tsx');
+    return config;
+  },
+};
+```
